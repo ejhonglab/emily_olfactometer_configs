@@ -1,21 +1,4 @@
-"""
-```
-n_repeats: 3
 
-odor_pairs:
- - pair:
-   - ethyl hexanoate
-   - 1-hexanol
- - pair:
-   - limonene
-   - linalool
-
-# Reformatted into settings.timing.*_us by [this] generator
-pre_pulse_s: 2
-pulse_s: 1
-post_pulse_s: 11
-```
-"""
 import random
 from copy import deepcopy
 import warnings
@@ -30,12 +13,6 @@ def make_config_dict(data):
 
     odor_pairs = data['odor_pairs']
 
-    # TODO maybe also support including multiple pairs in one recording,
-    # if we have enough available pins (on each manifold)
-
-    # TODO TODO better error message if config seems to be expecting separate
-    # hardware config, but it's not set up correctly (and thus one of the
-    # asserts about having some of the required keys fails in here)
     available_valve_pins, pins2balances, single_manifold = \
         common.get_available_pins(data, common_generated_config_dict)
 
@@ -44,10 +21,6 @@ def make_config_dict(data):
     # don't want to worry about cases with more manifolds for now
     assert len(set(pins2balances.values())) == 2
 
-    # TODO could maybe refactor stuff below to operate directly on outputs
-    # and depend less on single_manifold to branch...
-    # now i'm just re-extracting these from the config data, just as
-    # get_available_pins is doing
     available_group1_valve_pins = data['available_group1_valve_pins']
     available_group2_valve_pins = data['available_group2_valve_pins']
     group1_balance_pin = data['group1_balance_pin']
@@ -94,7 +67,7 @@ def make_config_dict(data):
                 continue
 
             n_concentrations = len(odor_name2log10_concs[n])
-            assert len(available_group_valve_pins) >= n_concentrations + 1
+            assert len(available_group_valve_pins) >= n_concentrations
 
             group_vials = [{'name': n, 'log10_conc': c}
                 for c in tuple(odor_name2log10_concs[n])

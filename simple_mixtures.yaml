@@ -13,20 +13,20 @@ odor_pairs:
       # Any odor w/ log_10_concentration = null is another way of saying it's just a
       # solvent (pfo) vial. {'name': 'pfo', 'log_10_concentration': 0} has the same
       # meaning when the solvent for the odor is pfo.
-      log10_concentrations: [null, -7, -6, -5]
+      log10_concentrations: [null, -7, -6, -5, -4]
 
     - name: pfo
       log10_concentrations: [0]
 
   - pair:
     - name: ethyl butyrate
-      log10_concentrations: [null, -7, -6, -5]
+      log10_concentrations: [null, -7, -6, -5, -4]
     - name: 2,3-butanedione
       log10_concentrations: [-6]
 
   - pair:
     - name: ethyl butyrate
-      log10_concentrations: [null, -7, -6, -5]
+      log10_concentrations: [null, -7, -6, -5, -4]
     - name: CO2
       # (5%)
       log10_concentrations: [-1.3]
