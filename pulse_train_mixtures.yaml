@@ -2,8 +2,8 @@
 generator: ./simple_pairs.py
 
 pre_pulse_s: 7
-pulse_s: 3
-post_pulse_s: 20
+pulse_s: 20
+post_pulse_s: 5
 
 n_repeats: 3
 
