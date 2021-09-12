@@ -1,0 +1,32 @@
+
+generator: ./simple_pairs.py
+
+pre_pulse_s: 7
+pulse_s: 3
+post_pulse_s: 20
+
+n_repeats: 3
+
+pulse_train_on_s: 0.5
+pulse_train_off_s: 0.5
+
+odor_pairs:
+  - pair:
+    - name: ethyl butyrate
+      log10_concentrations: [-4]
+    - name: pfo
+      log10_concentrations: [0]
+
+  - pair:
+    - name: ethyl butyrate
+      log10_concentrations: [-4]
+    - name: 2,3-butanedione
+      log10_concentrations: [-6]
+
+  - pair:
+    - name: ethyl butyrate
+      log10_concentrations: [-4]
+    - name: CO2
+      # (5%)
+      log10_concentrations: [-1.3]
+
