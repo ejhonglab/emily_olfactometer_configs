@@ -1,0 +1,53 @@
+
+generator: ./basic_plus_co2.py
+
+#total_flow_ml_per_min: 2000.0
+#odor_flow_ml_per_min: 200.0
+
+# Reformatted into settings.timing.*_us by the generator
+pre_pulse_s: 7
+pulse_s: 3
+post_pulse_s: 20
+
+n_repeats: 3
+
+# If this is False, the odors will be presented in the order in the list below.
+randomize_presentation_order: False
+
+odors:
+ - name: pfo
+   log10_conc: 0
+
+ - name: ethyl butyrate
+   log10_conc: -4
+
+ - name: diacetyl
+   log10_conc: -4
+
+ - name: 2-butanone
+   log10_conc: -4
+
+ - name: ethyl acetate
+   log10_conc: -8
+
+ - name: E2-hexenal
+   log10_conc: -4
+
+ - name: linalool
+   log10_conc: -4
+
+ - name: pentanol
+   log10_conc: -4
+
+ - name: acetic acid
+   # 3%
+   log10_conc: -1.52
+
+ - name: methyl salicylate
+   log10_conc: -4
+
+ - name: CO2
+   # 10% (though is the 10% in the text also subject to the same 1/10 flow dilution
+   # as the other odors, or is this 100% CO2 comprising 10% of the total airstream?)
+   log10_conc: -1
+
